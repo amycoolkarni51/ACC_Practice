@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin_Dashboard</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            min-height: 100vh;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        h1,h2{
+            color: rgb(242, 99, 115);
+        }
+        h3 {
+            color: #999;
+        }
+        .bttn {
+            background: blueviolet;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        .bttn:hover {
+            background: #f05462;
+            padding: 3px 8px;
+            border: 2px solid #f05462;
+        }
+        .title{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px 10px;
+            border-bottom: 2px solid #999;
+        }
+        table{
+            padding: 10px;
+        }
+        th{
+            text-align: left;
+            padding: 8px;
+            font-weight: bolder;
+        }
+        td{
+            text-align: left;
+            padding: 8px;
+            font-weight: 700;
+        }
+        .menu{
+            position: fixed;
+            background: blueviolet;
+            width: 20vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu .logo{
+            height: 10vh;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .menu li{
+            font-size: 25px;
+            padding: 10px 40px;
+            
+            display: flex;
+            align-items: center;
+        }
+        .menu li:hover {
+            background: #f05462;
+            
+        }
+        .cont {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+.cont .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.cont .header .main {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+.cont .header .main .search {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+.cont .header .main .search input[type=text] {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+}
+.cont .header .main .search a {
+    width: 50%;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cont .header .main .search button img {
+    width: 30px;
+    height: 30px;
+}
+.cont .header .main .pro {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cont .header .main .pro img {
+    width: 40px;
+    height: 40px;
+}
+.cont .header .main .pro .image {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.cont .header .main .pro .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.cont .content {
+    position: relative;
+    margin-top: 10vh;
+    min-height: 100vh;
+    background: #f1f1f1;
+}
+.cont .content .page {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cont .content .page .pages {
+    width: 300px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cont .content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.cont .content .content-2 .rec {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.cont .content .content-1 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.cont .content .content-1 .signup {
+    min-height: 50vh;
+    
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+    </style>
+    </head>
+    <body>
+        <nav id="menu">
+            <div class="menu">
+                <div class="logo">
+                    <h1 style="color: #f05462;"><u>ACC</u></h1>
+                </div>
+                <ul>
+                    <li><span><a href="#main" style="color: white; font-weight:700;">Dashboard</a></span></li>
+                    <li><span><a href="#registrations" style="color: white; font-weight:700;">Registrations</a></span></li>
+                    <li><span><a href="#enquiry" style="color: white; font-weight:700;">Inquiries</a></span></li>
+                    <li><span><a href="#signup" style="color: white; font-weight:700;">Signup's</a></span></li>
+                    <li><span><a href="#del" style="color: white; font-weight:700;">Delete</a></span></li>
+                    <li><span><a href="#filter" style="color: white; font-weight:700;">Filters</a></span></li><br><br><br>
+                    <li><span><a href="#logout" style="color: white; font-weight:700;">Logout</a></span></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="main">
+            <div class="cont">
+                <div class="header">
+                    <div class="main">
+                        <div class="search">
+                            <input type="text" style="border: 2px solid black;" placeholder="Search Here">
+                            <a type="submit"href="#" style="border: 2px solid black;width: 100px;">Search</a>
+                        </div>
+                        <div class="pro">
+                            <a href="#" class="bttn">Add Member</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="content">
+                        <div class="page">
+                            <div class="pages">
+                                <div class="box">
+                                    <h1>45</h1>
+                                    <h3>Registrations</h3>
+                                </div>
+                                <div class="icon-case">
+                                    <img src="students.png" alt="">
+                                </div>
+                            </div>
+                            <div class="pages">
+                                <div class="box">
+                                    <h1>53</h1>
+                                    <h3>Inquiries</h3>
+                                </div>
+                                <div class="icon-case">
+                                    <img src="teachers.png" alt="">
+                                </div>
+                            </div>
+                            <div class="pages">
+                                <div class="box">
+                                    <h1>5</h1>
+                                    <h3>Signup's</h3>
+                                </div>
+                                <div class="icon-case">
+                                    <img src="schools.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-2" id="registrations">
+                            <div class="rec">
+                                <div class="title">
+                                    <h2>All Registrations</h2>
+                                </div>
+                                <table>
+                                    <tr >
+                                        <th>Name</th>
+                                        <th>Mail_id</th>
+                                        <th>Course</th>
+                                        <th>Fees</th>
+                                        <th >Remove</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Amruta Kulkarni</td>
+                                        <td>amycoolkarni51@gmail.com</td>
+                                        <td>Python</td>
+                                        <td>30,000</td>
+                                        <td ><a href="#" style="align-items: center;font-weight: bold;margin-left: 30px; text-align: center;color: #f05462;font-size: 20px;">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shruti Bhate</td>
+                                        <td>shruti@gmail.com</td>
+                                        <td>Python</td>
+                                        <td>30,000</td>
+                                        <td><a href="#" style="align-items: center;font-weight: bold;margin-left: 30px; text-align: center;color: #f05462;font-size: 20px;">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rohan Dikhale</td>
+                                        <td>rohan@gmail.com</td>
+                                        <td>JAVA</td>
+                                        <td>20,000</td>
+                                        <td><a href="#" style="align-items: center;font-weight: bold;margin-left: 30px; text-align: center;color: #f05462;font-size: 20px;">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Krishna Chaudhary</td>
+                                        <td>krishna@gmail.com</td>
+                                        <td>ML</td>
+                                        <td>40,000</td>
+                                        <td><a href="#" style="align-items: center;font-weight: bold;margin-left: 30px; text-align: center;color: #f05462;font-size: 20px;">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amruta Kulkarni</td>
+                                        <td>amycoolkarni51@gmail.com</td>
+                                        <td>AI</td>
+                                        <td>50,000</td>
+                                        <td><a href="#" style="align-items: center;font-weight: bold;margin-left: 30px; text-align: center;color: #f05462;font-size: 20px;">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Krishna Chaudhary</td>
+                                        <td>krishna@gmail.com</td>
+                                        <td>Python</td>
+                                        <td>30,000</td>
+                                        <td><a href="#" style="align-items: center;font-weight: bold;margin-left: 30px; text-align: center;color: #f05462;font-size: 20px;">x</a></td>
+                                    </tr>
+                                    
+        </section>
+        
+    </body>
+</html>

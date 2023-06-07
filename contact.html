@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta name="viewport"content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Contact</title>
+		<link href="stylec.css"rel="stylesheet"type="text/css"/>
+		<link href="/style.css" rel="stylesheet">
+		<link href="bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			<div class="container">
+			  <a class="navbar-brand" href="#"><span class="text-warning">ACC</span>Courses</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'index' %}">Home</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#about">About</a>
+				  </li> 
+				  <li class="nav-item">
+					<a class="nav-link" href="#Features">Features</a>
+				  </li> 
+				  <li class="nav-item">
+					<a class="nav-link" href="course.html">Courses</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="faculty.html">Team</a>
+				  </li> 
+				  <li class="nav-item">
+					<a class="nav-link" href="contact.html">Contact</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="faq.html">FAQ</a>
+				  </li> 
+				  <li class="nav-item">
+					<a class="nav-link" href="#login" style="border-style: ridge;border-color: black; border-radius: 10px;">Login</a>
+				  </li>        
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+		<div class="contact-wrap">
+			<div class="contact-in">
+				<h1>Contact Info</h1>
+				<h2><i class="fa fa-phone" aria-hidden="true"></i> Phone</h2>
+				<p>+91-1234-567-890</p>
+				<h2><i class="fa fa-envelope" aria-hidden="true"></i> Email</h2>
+				<p>info@acc_courses.com</p>
+				<h2><i class="fa fa-map-marker" aria-hidden="true"></i> Address</h2>
+				<p>Sambhaji Nagar, India</p>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+			<div class="contact-in">
+				<h1>Send a Message</h1>
+				<form method="POST">
+					{% csrf_token %}
+					<input type="text" placeholder="Full Name" class="contact-in-input" name="Full_Name">
+					<input type="text" placeholder="Email" class="contact-in-input" name="EmailId">
+					<input type="text" placeholder="Subject" class="contact-in-input" name="Subject">
+					<textarea placeholder="Message" class="contact-in-textarea" name="Message"></textarea>
+					<input type="submit" value="SUBMIT" class="contact-in-btn">
+				</form>
+			</div>
+			<div class="contact-in">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1601968196548!5m2!1sen!2sin" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+		</div>
+		<!-- footer starts -->
+		<footer>
+			<div class="footer-container">
+				<div class="left-col">
+					<img src="images/logo.jpg" style="width: 100px;">
+					<div class="logo"></div>
+					<!-- <div class="social-media">
+						<a href="#"><img src="images/icon\fb.png"></a>
+						<a href="#"><img src="images/icon\insta.png"></a>
+						<a href="#"><img src="images/icon\tt.png"></a>
+						<a href="#"><img src="images/icon\ytube.png"></a>
+						<a href="#"><img src="images/icon\linkedin.png"></a>
+					</div> --><br><br>
+					<p class="rights-text">Copyright © 2021 Created By ACC_Courses All Rights Reserved.</p>
+					<br><p><!-- <img src="images/icon/location.png"> --> ACC Courses<br>Sambhaji Nagar, Maharashtra</p><br>
+					<p><!-- <img src="images/icon/phone.png"> --> +91-1234-567-890<br><!-- <img src="images/icon/mail.png">&nbsp; --> info@acc_courses.com</p>
+				</div>
+				<div class="right-col">
+					<h1 style="color: #fff">Get Signed-in..!!!!</h1>
+					<div class="border"></div><br>
+					<p>Enter Your Email to get Started</p>
+					<form action="\" method="POST"  class="newsletter-form">
+						<input class="txtb" type="email" placeholder="Enter Your Email">
+						<input class="btn" type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</footer>
+		
+		  <!-- footer ends -->
+	</body>
+</html>

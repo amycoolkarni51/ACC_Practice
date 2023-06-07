@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles go here */
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Python Courses</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'course' %}">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Machine learning</h1>
+        <p>
+
+      Module 1: Introduction to Python
+
+      Introduction to Python and its features
+      Installing Python and setting up the development environment
+      Running Python scripts and interactive mode
+      Variables, data types, and basic operations
+      Control structures: if statements, loops, and conditional statements</p>
+      <h5 class="card-title">What you'll learn</h5>
+
+
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XIR20HH8mNY" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Course Details</h5>
+            <p class="card-text">Course duration: 6 hours</p>
+            <p class="card-text">Instructor: Vineet Singh</p>
+            <a href="https://drive.google.com/file/d/1ANHMjCikjS8gvie3mvAWvjHmKpDXL1kk/view?usp=sharing" class="btn btn-primary">Download PDF</a>
+            <a href="{% url 'compiler' %}" class="btn btn-success">Run Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <head>
+  <title>Description Section Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .description-section {
+      padding: 50px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    
+    .description-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .description-text {
+      font-size: 18px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="description-section">
+          <h2 class="description-title">Expand your career opportunities with Python</h2>
+          <p class="description-text">
+            Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will appeal to both beginners and advanced developers alike.
+
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+  
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>&copy; 2023 MHTECHIN. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

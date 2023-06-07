@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+    <head>
+        <title>Faculty</title>
+        <!-- bootstrap link to use icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-family: arial;
+            }
+
+            .faculty{
+                max-width: 90%;
+                margin: 50px auto 0;
+            }
+            
+            /* all box which have image and text inside*/
+            .faculty .box{
+                margin-bottom: 50px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            /* inside box image */
+            .faculty .box .image{
+                flex: 0 0 auto;
+                width: 250px;
+            }
+
+            .faculty .box .image img{
+                width: 100%;
+                border-radius: 50%;
+                box-shadow: 0 0 10px 5px rgba(0,0,0, .3);
+                transition: .3s;
+                transform: scale(1);
+            }
+            
+            .faculty .box .image:hover img{
+                transform: scale(1.05);
+            }
+
+            /* inside box text */
+            .faculty .box .text{
+                flex: 0 0 auto;
+                width:calc(100% - 400px);
+                box-sizing: border-box;
+                align-self: center;
+            }
+
+            .faculty .box .text h2{
+                font-weight: 700;
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+
+            .faculty .box .text .card-text{
+                font-size: 20px;
+            }
+
+              
+            /* inside box icon */
+            .faculty .box .text h2 i {
+               
+                padding:10px;
+            }
+
+
+            .faculty .box .text h2 i:hover {
+                opacity: 0.7;
+            }
+
+            
+            /* for alternate representation of boxes */
+            @media screen and (min-width: 1024px)
+            {
+                .faculty .box:nth-child(odd) .image
+                {
+                    order: 1;
+                }
+                .faculty .box:nth-child(even) .image
+                {
+                    order: 2;
+                }
+
+                .faculty .box:nth-child(odd) .text
+                {
+                    order: 2;
+                    padding-left: 30px;
+                }
+                .faculty .box:nth-child(even) .text
+                {
+                    order: 1;
+                    padding-right: 30px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+              <a class="navbar-brand" href="#"><span class="text-warning">ACC</span>Courses</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Features">Features</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Courses">Courses</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'faculty' %}">Team</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#login" style="border-style: ridge;border-color: black; border-radius: 10px;">Login</a>
+                  </li>        
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <!-- whole window -->
+        <div class="faculty">
+            
+            <!-- First member -->
+            <div class="box">
+                <!-- for image -->
+                <div class="image">
+                    <img src="/static/images/teacher1.jpg" alt="Name1">
+                </div>
+                <!-- for text -->
+                <div class="text">
+                    <h2>Full Name <i class="bi bi-linkedin" style="color:#0A66C2;"></i><i class="bi bi-github"></i></h2>
+                    <p class="card-text">Certified Machine Learning Teacher.Msc in compute science at UK university.A Well Known Personality in UK university with few more certificates and Projects.<br>
+                    Popular Projects:  <br>
+                    Certificates: <br> 
+                    EmailId:     <br></p>
+                </div>
+            </div>
+       
+
+            <!-- Second member -->
+            <div class="box">
+                <!-- for image -->
+                <div class="image">
+                    <img src="/static/images/teacher2.jpg" alt="Name2">
+                </div>
+                <!-- for text -->
+                <div class="text">
+                    <h2>Full Name <i class="bi bi-linkedin" style="color:#0A66C2;"></i><i class="bi bi-github"></i></h2>
+                    <p class="card-text">Certified Python Programming Teacher.Msc in compute science at UK university.A Well Known Personality in UK university with few more certificates and Projects.<br>
+                        Popular Projects:  <br>
+                        Certificates: <br> 
+                        EmailId:     <br></p>
+                </div>
+            </div>
+        
+
+            <!-- Third member -->
+            <div class="box">
+                <!-- for image -->
+                <div class="image">
+                    <img src="/static/images/teacher3.jpg" alt="Name3">
+                </div>
+                <!-- for text -->
+                <div class="text">
+                    <h2>Full Name <i class="bi bi-linkedin" style="color:#0A66C2;"></i><i class="bi bi-github"></i></h2>
+                    <p class="card-text">Certified C Programming Teacher.Msc in compute science at UK university.A Well Known Personality in UK university with few more certificates and Projects.<br>
+                        Popular Projects:  <br>
+                        Certificates: <br> 
+                        EmailId:     <br></p>
+                </div>
+            </div>
+       
+
+            <!-- Fourth member -->
+            <div class="box">
+                <!-- for image -->
+                <div class="image">
+                    <img src="/static/images/teacher4.jpg" alt="Name4">
+                </div>
+                <!-- for text -->
+                <div class="text">
+                    <h2>Full Name <i class="bi bi-linkedin" style="color:#0A66C2;"></i><i class="bi bi-github"></i></h2>
+                    <p class="card-text">Certified Web Development Teacher.Msc in compute science at UK university.A Well Known Personality in UK university with few more certificates and Projects.<br>
+                        Popular Projects:  <br>
+                        Certificates: <br> 
+                        EmailId:     <br></p>
+                </div>
+            </div>
+
+        </div>
+         <!-- footer starts -->
+		<footer>
+			<div class="footer-container">
+				<div class="left-col">
+					<img src="/static/images/logo.jpg" style="width: 100px;">
+					<div class="logo"></div>
+					<!-- <div class="social-media">
+						<a href="#"><img src="images/icon\fb.png"></a>
+						<a href="#"><img src="images/icon\insta.png"></a>
+						<a href="#"><img src="images/icon\tt.png"></a>
+						<a href="#"><img src="images/icon\ytube.png"></a>
+						<a href="#"><img src="images/icon\linkedin.png"></a>
+					</div> --><br><br>
+					<p class="rights-text">Copyright © 2021 Created By ACC_Courses All Rights Reserved.</p>
+					<br><p><!-- <img src="images/icon/location.png"> --> ACC Courses<br>Sambhaji Nagar, Maharashtra</p><br>
+					<p><!-- <img src="images/icon/phone.png"> --> +91-1234-567-890<br><!-- <img src="images/icon/mail.png">&nbsp; --> info@acc_courses.com</p>
+				</div>
+				<div class="right-col">
+					<h1 style="color: #fff">Get Signed-in..!!!!</h1>
+					<div class="border"></div><br>
+					<p>Enter Your Email to get Started</p>
+					<form action="\" method="POST"  class="newsletter-form">
+						<input class="txtb" type="email" placeholder="Enter Your Email">
+						<input class="btn" type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</footer>
+		
+		  <!-- footer ends -->
+        
+    </body>
+</html>
+

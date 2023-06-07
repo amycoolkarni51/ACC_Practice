@@ -1,0 +1,84 @@
+
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: Arial,Helvetica,sans-serif;
+  transition: all .2s linear;
+
+}
+.heading{
+  text-align: center;
+  padding-bottom: 15px;
+  color: #DC143C;
+  text-shadow: 0 5px 10px rgba(0,0,0,.2);
+  font-size: 40px;
+  padding: 30px;
+}
+h3{
+  text-align: center;
+
+}
+
+.box-container{
+  min-height: 80vh;
+  background: white;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+.box-container .box{
+  height: 280px;
+  width: 280px;
+  border: 8px solid #fff;
+  box-shadow: 0 5px 5px #000;
+  overflow: hidden;
+  margin: 20px 15px;
+}
+.box-container .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale();
+}
+
+.box-container .box:hover img{
+  filter: grayscale(0%);
+  transform: scale(1.1);
+
+}
+.box-container .box .info{
+  text-align: center;
+  background: #fff;
+  position: relative;
+  bottom: 40px;
+}
+.box-container .box:hover .info{
+    bottom: 128px;
+}
+.box-container .box .info .title{
+  padding: 10px 0;
+  font-size: 20px;
+  color: #Black;
+  text-transform: capitalize;
+}
+.box-container .box .info .post{
+  font-size: 15px;
+  color: #333;
+}
+.box-container .box .info .share{
+  margin-top: 10px;
+  border-top: 1px solid #4444;
+}
+.box-container .box .info .share a{
+  font-size: 20px;
+  margin: 20px 10px;
+  text-decoration: none;
+  color: #DC143C;
+}
+.box-container .box .info .share a:hover{
+  color: #DC143C;
+}

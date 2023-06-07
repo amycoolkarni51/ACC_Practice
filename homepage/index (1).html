@@ -1,0 +1,1166 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- icon  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+
+    /* navber */
+    header{
+      margin: 0;
+      padding: 0;
+      font-weight: cooper black;
+    }
+    header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: teal;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    }
+
+    .navigation a{
+    position: relative;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 65px;
+    text-transform: uppercase;
+    }
+    .navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    bottom: -6px;
+    background: lime;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+    }
+    .navigation a:hover:after{
+    background: #800080;
+    transform: scaleX(1);
+    transform-origin: left;
+    }
+    #x1{
+    margin-right: 30px;
+    }
+    #x2{
+    margin-left: 20px;
+    }
+    #x3{
+    margin-right: 20px;
+    }
+    #x4{
+    margin-right: 60px;
+    /* margin-left: -10px; */
+    }
+    #x4{
+    margin-left: 80px;
+    }
+    input{
+    padding: 8px;
+    border: none;
+    margin-right: 10px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    }
+
+    /* end navbar */
+
+        @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap");
+
+        /* animation */
+        .two {
+            background: linear-gradient(blue, purple);
+            height: 100vh;
+            font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
+            font-weight: 300;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -3;
+            }
+
+            &:before {
+                right: 0;
+                bottom: -19;
+                height: 30em;
+                width: 30em;
+                border-radius: 30em;
+                background: linear-gradient(blue, purple);
+                align-self: flex-end;
+                animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+            }
+
+            &:after {
+                circle-unit: 10em;
+                top: 0;
+                left: 30;
+                height: circle-unit;
+                width: circle-unit;
+                border-radius: circle-unit;
+                background: linear-gradient(blue, purple);
+                animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+            }
+
+            &__text-wrapper {
+                position: relative;
+                padding: 2em;
+
+                &:before,
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                }
+
+                &:before {
+                    circle-unit: 13em;
+                    z-index: -1;
+                    top: -3em;
+                    right: -3em;
+                    width: circle-unit;
+                    height: circle-unit;
+                    opacity: 0.7;
+                    border-radius: circle-unit;
+                    background: linear-gradient(red, purple);
+                    animation: rotation 3s linear infinite;
+                }
+
+                &:after {
+                    circle-unit: 20em;
+                    z-index: -1;
+                    bottom: -(circle-unit);
+                    width: circle-unit;
+                    height: circle-unit;
+                    border-radius: circle-unit;
+                    background: linear-gradient(magenta, purple);
+                    animation: rotation 4s linear infinite;
+                }
+            }
+        }
+
+        .arrow {
+            z-index: 1000;
+            opacity: 0.5;
+            position: absolute;
+
+            &--top {
+                top: 0;
+                left: -5em;
+            }
+
+            &--bottom {
+                bottom: 0;
+                right: 3em;
+            }
+        }
+
+        .circle {
+            transform: translate(50%, -50%) rotate(0deg);
+            transform-origin: center;
+
+            &--red {
+                circle-unit: 20em;
+                height: circle-unit;
+                width: circle-unit;
+                border-radius: circle-unit;
+                background: linear-gradient(red, blue);
+            }
+        }
+
+        .backdrop {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            background-color: pink;
+        }
+
+        .dotted-circle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0.3;
+            animation: rotation 38s linear infinite;
+        }
+
+        .draw-in {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 10;
+            animation: draw 10s ease-in-out alternate infinite;
+        }
+
+        @keyframes draw {
+            from {
+                stroke-dashoffset: 1000;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .item-to {
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            transform-origin: bottom;
+        }
+
+        .bounce-1 {
+            animation-name: bounce-1;
+            animation-timing-function: ease;
+        }
+
+        .bounce-2 {
+            animation-name: bounce-2;
+            animation-timing-function: ease;
+        }
+
+        .bounce-3 {
+            animation-name: bounce-3;
+            animation-timing-function: ease;
+        }
+
+        @keyframes bounce-1 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce-2 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce-3 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes gradient-fade {
+            from {
+                transform: translate(10%, -10%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes gradient-fade-alt {
+            from {
+                transform: translate(-20%, 20%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-60%, 60%) rotate(360deg);
+            }
+        }
+
+        /* end animation */
+
+
+        /* img animation */
+        img.Mhtech {
+            -webkit-animation: mover 1s infinite alternate;
+            animation: mover 1s infinite alternate;
+        }
+
+        img.Mhtech {
+            -webkit-animation: mover 1s infinite alternate;
+            animation: mover 1s infinite alternate;
+        }
+
+        @-webkit-keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* end img animation */
+
+    /* wave */
+
+
+    .ocean {
+      height: 2%;
+      width:100%;
+      position:absolute;
+      bottom:10px;
+      left: 0;
+    }
+
+    .wave {
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+      position: absolute;
+      top: -198px;
+      width: 1200px;
+      height: 150px;
+      animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+      transform: translate3d(10, 50, 0);
+    }
+
+    .wave:nth-of-type(2) {
+      top: -175px;
+      animation: wave 9s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+      opacity: 1;
+    }
+
+    @keyframes wave {
+      0% {
+        margin-left: 10px;
+      }
+      10% {
+        margin-left: 50px;
+      }
+      30% {
+        margin-left: 80px;
+      }
+       50% {margin-left: 100px;}
+      100% {
+        margin-left: -1600px;
+      }
+
+    }
+
+    @keyframes swell {
+      0%, 100% {
+        transform: translate3d(0,-25px,0);
+      }
+      50% {
+        transform: translate3d(0,5px,0);
+      }
+    }
+    /*  end wave */
+
+    /* Courses */
+    .imgbtn {
+        padding: 10px;
+        padding-block: 10px;
+        border-spacing: 90px;
+    }
+
+    .imgbtn .btn1 {
+        width:25%;
+        height: 40vh;
+        background-image: url('./python.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 5vh;
+        margin-left: auto;
+        border-radius: 25px;
+        border-color: dimgray;
+        border-bottom-width: 20px;
+        border-top-width: 20px;
+        border-left-style: solid;
+    }
+
+    .imgbtn .btn2 {
+        width: 25%;
+        height: 40vh;
+        background-image: url('./Java.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: auto;
+        margin-bottom: 5vh;
+        border-radius: 25px;
+        border-color: dimgray;
+        border-bottom-width: 20px;
+        border-top-width: 20px;
+    }
+
+    .imgbtn .btn3 {
+        width: 25%;
+        height: 40vh;
+        background-image: url('./R\ programming.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: auto;
+        margin-bottom: 5vh;
+        border-radius: 25px;
+        border-color: dimgray;
+        border-bottom-width: 20px;
+        border-top-width: 20px;
+        border-left-style: solid;
+    }
+
+    .imgbtn .btn4 {
+        width: 24%;
+        height: 40vh;
+        background-image: url('./Data\ Science.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: auto;
+        margin-bottom: 5vh;
+        border-radius: 25px;
+        border-color: dimgray;
+        border-bottom-width: 20px;
+        border-top-width: 20px;
+        border-left-style: solid;
+    }
+/* end courses */
+
+/* snow */
+.hero {
+	background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
+	min-height: 100vh;
+	min-height: 30rem;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+	&__content {
+		position: relative;
+		align-self: center;
+		padding: 3rem 0;
+	}
+}
+
+.snow {
+	position: absolute;
+	min-width: 100vw;
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.snow .svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#snow-top-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 22.5s infinite linear;
+}
+
+#snow-bottom-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 45s infinite linear;
+}
+
+@keyframes fall {
+
+	100% {
+		transform: translateY(0);
+	}
+}
+/* end snow */
+
+/* img animation */
+img.Mhtech {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+
+img.Mhtech {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+/* end img animation */
+
+/* alumni */
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: Arial,Helvetica,sans-serif;
+  transition: all .2s linear;
+
+}
+.heading{
+  text-align: center;
+  padding-bottom: 15px;
+  color: #DC143C;
+  text-shadow: 0 5px 10px rgba(0,0,0,.2);
+  font-size: 40px;
+  padding: 30px;
+}
+h3{
+  text-align: center;
+ }
+
+.box-container{
+  min-height: 80vh;
+  background: white;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+.box-container .box{
+  height:280px;
+  width:280px;
+  border: 8px solid #fff;
+  box-shadow: 0 5px 5px #000;
+  overflow: hidden;
+  margin: 20px 15px;
+}
+.box-container .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale();
+}
+
+.box-container .box:hover img{
+  filter: grayscale(0%);
+  transform: scale(1.1);
+
+}
+.box-container .box .info{
+  text-align: center;
+  background: #fff;
+  position: relative;
+  bottom: 40px;
+}
+.box-container .box:hover .info{
+    bottom: 128px;
+}
+.box-container .box .info .title{
+  padding: 10px 0;
+  font-size: 20px;
+  color: Black;
+  text-transform: capitalize;
+}
+.box-container .box .info .post{
+  font-size: 15px;
+  color: #333;
+}
+.box-container .box .info .share{
+  margin-top: 10px;
+  border-top: 1px solid #4444;
+}
+.box-container .box .info .share a{
+  font-size: 20px;
+  margin: 20px 10px;
+  text-decoration: none;
+  color: #DC143C;
+}
+.box-container .box .info .share a:hover{
+  color: #DC143C;
+}
+
+/* end alumni */
+
+
+  </style>
+
+  <script>
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+          if (!event.target.matches('.dropbtn')) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              var i;
+              for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');
+                  }
+              }
+          }
+      }
+  </script>
+
+  <body>
+<!-- navbar -->
+    <header>
+      <h3 class="logo" id="x2">ACC Courses</h3>
+      <div class="navigation">
+        <a href="#" id="x1">Home</a>
+        <a href="#" id="x3">About</a>
+        <a href="#" id="x5">Courses</a>
+        <a href="#" id="x4">Contact</a>
+        <input type="text" placeholder="search">
+      </div>
+    </header>
+<!--end navbar -->
+
+<!-- start Animation Sections-->
+<div class="two">
+    <div class="arrow arrow--top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="270.11" height="649.9" overflow="visible">
+            <style>
+                .geo-arrow {
+                    fill: none;
+                    stroke: #fff;
+                    stroke-width: 2;
+                    stroke-miterlimit: 10
+                }
+            </style>
+            <g class="item-to bounce-1">
+                <path class="geo-arrow draw-in" d="M135.06 142.564L267.995 275.5 135.06 408.434 2.125 275.499z" />
+            </g>
+            <circle class="geo-arrow item-to bounce-2" cx="194.65" cy="69.54" r="7.96" />
+            <circle class="geo-arrow draw-in" cx="194.65" cy="39.5" r="7.96" />
+            <circle class="geo-arrow item-to bounce-3" cx="194.65" cy="9.46" r="7.96" />
+            <g class="geo-arrow item-to bounce-2">
+                <path class="st0 draw-in" d="M181.21 619.5l13.27 27 13.27-27zM194.48 644.5v-552" />
+            </g>
+        </svg>
+    </div>
+    <div class="arrow arrow--bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" width="31.35" height="649.9" overflow="visible">
+            <style>
+                .geo-arrow {
+                    fill: none;
+                    stroke: #fff;
+                    stroke-width: 2;
+                    stroke-miterlimit: 10
+                }
+            </style>
+            <g class="item-to bounce-1">
+                <circle class="geo-arrow item-to bounce-3" cx="15.5" cy="580.36" r="7.96" />
+                <circle class="geo-arrow draw-in" cx="15.5" cy="610.4" r="7.96" />
+                <circle class="geo-arrow item-to bounce-2" cx="15.5" cy="640.44" r="7.96" />
+                <g class="item-to bounce-2">
+                    <path class="geo-arrow draw-in" d="M28.94 30.4l-13.26-27-13.27 27zM15.68 5.4v552" />
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="main">
+        <div class="main__text-wrapper">
+            <h1 class="main__title">ACC Classes Platform </h1>
+            <h2> MHTECHIN </h2>
+            <svg xmlns="http://www.w3.org/2000/svg" class="dotted-circle" width="352" height="352"
+                overflow="visible">
+                <circle cx="176" cy="176" r="174" fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10"
+                    stroke-dasharray="12.921,11.9271" />
+            </svg>
+        </div>
+    </div>
+<!--wave-->
+        <div class="ocean">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+<!-- end wave-->
+</div>
+<!-- end Animation Sections-->
+
+<!-- Courses -->
+<div class="container-fluid imgbtn bg-info">
+  <h1 class="text-center text-white"><b> Courses </b> </h1>
+  <div class="row">
+    <div class="col-md-3">
+      <button class="btn1" type="button"><a href="Learning_python.pdf"><img src="./python.jpg" style="width:300px;height:180px"></a></button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn2" type="submit"><a href="java_intro.pdf"><img src="./java.jpg" style="width:300px;height:180px"></a></button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn3" type="button"><a href="r_programing.pdf"><img src="./R programming.jpg" style="width:300px;height:180px"></a></button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn4" type="submit"><a href="datascience_intro.pdf"><img src="./data science.jpg" style="width:300px;height:180px"></a></button>
+    </div>
+  </div>
+</div>
+<!-- end Courses -->
+
+<!-- almuni -->
+<!-- form  -->
+    <div class="container-fluid" style='background-color:#a2a2e9' >
+      <h1 class="text-center ">Alumini Network</h1>
+      <div class="row">
+       <div class="offset-md-1 col-md-7 mt-5">
+         <img src="https://th.bing.com/th/id/OIP.ck-dCehqAPxftDGtf-5yNQHaD4?pid=ImgDet&rs=1"
+         style="height:100%; width:100%;"
+          alt="">
+       </div>
+
+       <div class="col-md-3 mt-5 md-3">
+        <h3 class="text-center heading">MHTECHIN</h3>
+         <h2 class="text-center ">Alumini Network</h2>
+         <form class="style=font-size:15px;" action="index.html" method="post">
+           <label>First Name</label>
+           <input type="text" name="fname" class="form-control"> <br>
+           <label>Last Name</label>
+           <input type="text" name="lname" class="form-control"> <br>
+           <label>Email Id</label>
+           <input type="email" name="email" class="form-control"> <br>
+           <label>Password</label>
+           <input type="password" name="Password" class="form-control"> <br>
+          <center>
+            <input type="submit" name="" value="SUBMIT"  class="btn btn-success">
+            <input type="reset" name="" value="CLEAR"  class="btn btn-danger">
+          </center>
+         </form>
+       </div>
+      </div>
+    </div>
+<!-- end form -->
+
+<!-- members -->
+<div style="background-color: #f88b8b;">
+     <h1 class="heading">Popular members in the network</h1>
+     <h3 >Highlighting some of the most visited profiles join the network and connect with them</h3>
+    <div class="box-container" style="background-color: #f88b8b;">
+      <div class="box">
+        <img src="images/img1.jpg" alt="">
+        <div class="info">
+          <h3 class="title">palak rai</h3>
+          <span class="post">senior Director</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img2.jpg" alt="">
+        <div class="info">
+          <h3 class="title">john deo</h3>
+          <span class="post">Vice President,chennai</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img3.jpg" alt="">
+        <div class="info">
+          <h3 class="title">Sheetal Nair</h3>
+          <span class="post">Data Scientist</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img4.jpg" alt="">
+        <div class="info">
+          <h3 class="title">Aman kumar</h3>
+          <span class="post">Managing Director</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img5.jpg" alt="">
+        <div class="info">
+          <h3 class="title">Darika Jain</h3>
+          <span class="post">Senior Developer</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img6.jpg" alt="">
+        <div class="info">
+          <h3 class="title">Mrunal Shinde</h3>
+          <span class="post">CyberSecurity </span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img9.jpg" alt="">
+        <div class="info">
+          <h3 class="title">Girishchandra</h3>
+          <span class="post">junior Developer</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/img8.jpg" alt="">
+        <div class="info">
+          <h3 class="title">Ashika</h3>
+          <span class="post">Accociate Consultant</span>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+<!-- end  members -->
+<!-- end almuni -->
+
+<!-- why Learning -->
+<div class="container-fluid"
+style="background: linear-gradient(180deg, transparent, #f88b8b),linear-gradient(360deg, transparent, #9b9efe);">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h1 class=""><b> Why You Should Start Learning with Us? </b></h1>
+                        <div class="col-md-3 mt-3 mb-3">
+                            <div class="btn-icon bg-primary mr-4 mt-2 btn-lg" style="margin-bottom: 75px;">
+                                <i class="fa fa-2x fa-graduation-cap text-white"></i>
+                            </div>
+                            <div class="btn-icon bg-secondary mr-4 btn-lg" style="margin-bottom: 65px;">
+                                <i class="fa fa-2x fa-certificate text-white"></i>
+                            </div>
+                            <div class="btn-icon bg-warning mr-4 btn-lg">
+                                <i class="fa fa-2x fa-book-reader text-white"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 mt-3 mb-3">
+                            <div class="">
+                                <h4>Skilled Instructors</h4>
+                                <ul>
+                                    <li>Technology Skills. ..</li>
+                                    <li>Strong Communication Skills. ...</li>
+                                    <li>Organizational Skills. ...</li>
+                                </ul>
+                            </div>
+                            <div class="" style="margin-bottom: 50px;">
+                                <h4>International Certificate</h4>
+                                <p>Ideal Destination For Students, Offering A World-Class Education & High Quality of Life. </p>
+                            </div>
+                            <div class="">
+                                <h4>Online Classes</h4>
+                                <p>Learn new job skills in online courses from industry leaders like Google, Professional
+                                Certificates, and degrees from world-class ...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <img class="Mhtech mt-5"
+                    src="https://i.pinimg.com/originals/ed/ef/2e/edef2e649a7b02a67f3d6fe9476c06f7.jpg"
+                    style="height:80%; width: 80%; margin-left: 30px;">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end why Learning -->
+
+<!-- Start Instructors -->
+        <div class="hero">
+            <div class="snow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice">
+                    <g fill="#FFF" fill-opacity=".15" transform="translate(55 42)">
+                        <g id="snow-bottom-layer">
+                            <ellipse cx="6" cy="1009.5" rx="6" ry="5.5" />
+                            <ellipse cx="138" cy="1110.5" rx="6" ry="5.5" />
+                            <ellipse cx="398" cy="1055.5" rx="6" ry="5.5" />
+                            <ellipse cx="719" cy="1284.5" rx="6" ry="5.5" />
+                            <ellipse cx="760" cy="1155.5" rx="6" ry="5.5" />
+                            <ellipse cx="635" cy="1459.5" rx="6" ry="5.5" />
+                            <ellipse cx="478" cy="1335.5" rx="6" ry="5.5" />
+                            <ellipse cx="322" cy="1414.5" rx="6" ry="5.5" />
+                            <ellipse cx="247" cy="1234.5" rx="6" ry="5.5" />
+                            <ellipse cx="154" cy="1425.5" rx="6" ry="5.5" />
+                            <ellipse cx="731" cy="773.5" rx="6" ry="5.5" />
+                            <ellipse cx="599" cy="874.5" rx="6" ry="5.5" />
+                            <ellipse cx="339" cy="819.5" rx="6" ry="5.5" />
+                            <ellipse cx="239" cy="1004.5" rx="6" ry="5.5" />
+                            <ellipse cx="113" cy="863.5" rx="6" ry="5.5" />
+                            <ellipse cx="102" cy="1223.5" rx="6" ry="5.5" />
+                            <ellipse cx="395" cy="1155.5" rx="6" ry="5.5" />
+                            <ellipse cx="826" cy="943.5" rx="6" ry="5.5" />
+                            <ellipse cx="626" cy="1054.5" rx="6" ry="5.5" />
+                            <ellipse cx="887" cy="1366.5" rx="6" ry="5.5" />
+                            <ellipse cx="6" cy="241.5" rx="6" ry="5.5" />
+                            <ellipse cx="138" cy="342.5" rx="6" ry="5.5" />
+                            <ellipse cx="398" cy="287.5" rx="6" ry="5.5" />
+                            <ellipse cx="719" cy="516.5" rx="6" ry="5.5" />
+                            <ellipse cx="760" cy="387.5" rx="6" ry="5.5" />
+                            <ellipse cx="635" cy="691.5" rx="6" ry="5.5" />
+                            <ellipse cx="478" cy="567.5" rx="6" ry="5.5" />
+                            <ellipse cx="322" cy="646.5" rx="6" ry="5.5" />
+                            <ellipse cx="247" cy="466.5" rx="6" ry="5.5" />
+                            <ellipse cx="154" cy="657.5" rx="6" ry="5.5" />
+                            <ellipse cx="731" cy="5.5" rx="6" ry="5.5" />
+                            <ellipse cx="599" cy="106.5" rx="6" ry="5.5" />
+                            <ellipse cx="339" cy="51.5" rx="6" ry="5.5" />
+                            <ellipse cx="239" cy="236.5" rx="6" ry="5.5" />
+                            <ellipse cx="113" cy="95.5" rx="6" ry="5.5" />
+                            <ellipse cx="102" cy="455.5" rx="6" ry="5.5" />
+                            <ellipse cx="395" cy="387.5" rx="6" ry="5.5" />
+                            <ellipse cx="826" cy="175.5" rx="6" ry="5.5" />
+                            <ellipse cx="626" cy="286.5" rx="6" ry="5.5" />
+                            <ellipse cx="887" cy="598.5" rx="6" ry="5.5" />
+                        </g>
+                    </g>
+                    <g fill="#FFF" fill-opacity=".3" transform="translate(65 63)">
+                        <g id="snow-top-layer">
+                            <circle cx="8" cy="776" r="8" />
+                            <circle cx="189" cy="925" r="8" />
+                            <circle cx="548" cy="844" r="8" />
+                            <circle cx="685" cy="1115" r="8" />
+                            <circle cx="858" cy="909" r="8" />
+                            <circle cx="874" cy="1438" r="8" transform="rotate(180 874 1438)" />
+                            <circle cx="657" cy="1256" r="8" transform="rotate(180 657 1256)" />
+                            <circle cx="443" cy="1372" r="8" transform="rotate(180 443 1372)" />
+                            <circle cx="339" cy="1107" r="8" transform="rotate(180 339 1107)" />
+                            <circle cx="24" cy="1305" r="8" transform="rotate(180 24 1305)" />
+                            <circle cx="8" cy="8" r="8" />
+                            <circle cx="189" cy="157" r="8" />
+                            <circle cx="548" cy="76" r="8" />
+                            <circle cx="685" cy="347" r="8" />
+                            <circle cx="858" cy="141" r="8" />
+                            <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)" />
+                            <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)" />
+                            <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)" />
+                            <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)" />
+                            <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="hero__content mt-1">
+
+                <div class="container-fluid mt-1"
+                    >
+                    <h1 class="text-center text-white mb-5"><b><u>Meet Our Instructors</u></b> </h1>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <div class="team-item">
+                                <img src="https://watermark.lovepik.com/photo/20211210/large/lovepik-middle-aged-professor-took-a-lecture-to-smile-in-picture_501777177.jpg"
+                                    style="width:100%;height:100%;border-radius:5%;" data-toggle="collapse" data-target="#demo1">
+                                <div class="text-center collapse" id='demo1' style="background: linear-gradient(1deg, transparent,white);
+                                    border-radius:50px;  ">
+                                    <h5 class="">Instructor Name </h5>
+                                    <p class="">Web Design & Development</p>
+                                    <div class="text-center">
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-5">
+                            <div class="team-item">
+                                <img src="https://us.123rf.com/450wm/lightfieldstudios/lightfieldstudios1903/lightfieldstudios190306032/118631870-beautiful-female-teacher-in-formal-wear-and-glasses-holding-notebook-in-classroom.jpg?ver=6"
+                                    style="width:100%;height:100%;border-radius:5%;" data-toggle="collapse" data-target="#demo2">
+                                <div class="text-center collapse" id='demo2' style="background: linear-gradient(1deg, transparent,white);
+                                    border-radius:50px">
+                                    <h5>Instructor Name</h5>
+                                    <p class="">Web Design & Development</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-5">
+                            <div class="team-item">
+                                <img src="https://collegesofdistinction.com/wp-content/uploads/2022/03/studentfaculty.jpeg"
+                                    style="width:100%;height:100%;border-radius:5%;" data-toggle="collapse" data-target="#demo3">
+                                <div class="text-center collapse" id='demo3' style="background: linear-gradient(1deg, transparent,white);
+                                    border-radius:50px;">
+                                    <h5 class="">Instructor Name</h5>
+                                    <p class="">Web Design & Development</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- End Instructors -->
+
+
+
+
+
+
+  </body>
+</html>

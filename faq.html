@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--divinectorweb.com-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    
+    <!-- All CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+      *{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+#faq{
+  background: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.faq {
+margin: 0 auto;
+padding: 4rem;
+width: 48rem;
+}
+h1 {
+font-size: 40px;
+align-items: center;
+color: #040404;
+padding: 1.3rem;
+font-weight: bolder;
+}
+.accordion a {
+position: relative;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+width: 100%;
+padding: 1rem 3rem 1rem 1rem;
+color: #000;
+font-size: 1.25rem;
+font-weight: 500;
+border-bottom: 1px solid #e5e5e5;
+}
+.accordion a:hover,
+.accordion a:hover::after {
+cursor: pointer;
+color: #2e1377;
+}
+.accordion a:hover::after {
+border: 1px solid #ff5353;
+}
+.accordion a.active {
+color: rgb(70, 25, 205);
+border-bottom: 1px solid #ff5353;
+font-weight: bold;
+}
+.accordion a::after {
+font-family: 'Ionicons';
+content: '\f218';
+position: absolute;
+float: right;
+right: 1rem;
+font-size: 1rem;
+color: #7288a200;
+padding: 5px;
+width: 30px;
+height: 30px;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+border-radius: 50%;
+border: 1px solid #7288a200;
+text-align: center;
+}
+.accordion a.active::after {
+font-family: 'Ionicons';
+content: '\f209';
+color: #222121;
+border: 1px solid #ff5353;
+}
+.accordion .content {
+opacity: 0;
+padding: 0 1rem;
+max-height: 0;
+border-bottom: 1px solid #e5e5e5;
+overflow: hidden;
+clear: both;
+-webkit-transition: all 0.2s ease 0.15s;
+-o-transition: all 0.2s ease 0.15s;
+transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+font-size: 1.1rem;
+font-weight: 400;
+}
+.accordion .content.active {
+opacity: 1;
+padding: 1rem;
+max-height: 100%;
+-webkit-transition: all 0.35s ease 0.15s;
+-o-transition: all 0.35s ease 0.15s;
+transition: all 0.35s ease 0.15s;
+}
+@media screen and (min-width: 1024px){
+  .faq{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .faq {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .faq{
+    width: 50%;
+  }
+}
+
+  </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#"><span class="text-warning">ACC</span>Courses</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#Features">Features</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#Courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'faculty' %}">Team</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#login" style="border-style: ridge;border-color: black; border-radius: 10px;">Login</a>
+              </li>        
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section id="faq" style="background: linear-gradient(to right, rgb(252, 3, 152), #999093);">
+      <div class="faq">
+ 
+        <h1>Frequently Asked Questions</h1>
+       
+        <div class="accordion">
+          <div class="accordion-item">
+            <a>What is included in ACC Cources?</a>
+            <div class="content">
+              <p>With your ACC Courses subscription, you get unlimited access to more than 7,000 courses, Projects, Specializations, and Professional Certificate programs in a variety of domains, including data science, business, computer science, health, personal development, humanities, and more. The majority of courses on ACC courses are included. Certain courses, Specializations, and Professional Certificate programs are excluded. Acc courses also does not include degrees or MasterTrack™ Certificate programs.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Will I save my money with ACC Cources Subscription?</a>
+            <div class="content">
+              <p>Yes! If you're taking more than one course regularly, you can save up to 30% each month. The more you learn, the more you save!</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>How many certificates can I earn with ACC Cources?</a>
+            <div class="content">
+              <p>There is no limit! You will earn a Certificate for every course, Project, Specialization, or Professional Certificate that you complete.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>How does ACC Cources impact my motivation to Learn?</a>
+            <div class="content">
+              <p>Based on our data and research, we typically see higher completion rates among Coursera Plus learners, and we are hearing directly from learners that having a Coursera Plus subscription increases their motivation to learn more.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Can I Try ACC Cources first, to make sure it's right for me?</a>
+            <div class="content">
+              <p>Yes! We have two options, depending on which payment plan you choose.
+                If you opt to make monthly payments, you can take advantage of a 7-day free trial to experience learning with ACC Courses before you decide to purchase. We do capture your payment information when you subscribe, but you won't be charged until the end of your 7-day free trial. So, if you decide ACC Courses isn't right for you, just cancel during the trial period and there will be no charge.
+                If you opt to make an annual payment, you'll have up to 14 days to submit a refund request if you decide that ACC Courses isn't right for you. The process is simple—just go to your My Purchases page within 14 days of your payment and submit a refund request. No additional information is required. Please note that any certificates that you earn within your first 14 days will be revoked if you decide to get a refund within that period.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+       
+      <script src='https://code.jquery.com/jquery-3.2.1.main.js'></script>
+      <script  src="/static/js/faq.js"></script>
+</div>
+</section>
+     <!-- footer starts -->
+		<footer>
+			<div class="footer-container">
+				<div class="left-col">
+					<img src="/static/images/logo.jpg" style="width: 100px;">
+					<div class="logo"></div>
+					<!-- <div class="social-media">
+						<a href="#"><img src="images/icon\fb.png"></a>
+						<a href="#"><img src="images/icon\insta.png"></a>
+						<a href="#"><img src="images/icon\tt.png"></a>
+						<a href="#"><img src="images/icon\ytube.png"></a>
+						<a href="#"><img src="images/icon\linkedin.png"></a>
+					</div> --><br><br>
+					<p class="rights-text">Copyright © 2021 Created By ACC_Courses All Rights Reserved.</p>
+					<br><p><!-- <img src="images/icon/location.png"> --> ACC Courses<br>Sambhaji Nagar, Maharashtra</p><br>
+					<p><!-- <img src="images/icon/phone.png"> --> +91-1234-567-890<br><!-- <img src="images/icon/mail.png">&nbsp; --> info@acc_courses.com</p>
+				</div>
+				<div class="right-col">
+					<h1 style="color: #fff">Get Signed-in..!!!!</h1>
+					<div class="border"></div><br>
+					<p>Enter Your Email to get Started</p>
+					<form action="\" method="POST"  class="newsletter-form">
+						<input class="txtb" type="email" placeholder="Enter Your Email">
+						<input class="btn" type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</footer>
+		
+		  <!-- footer ends -->
+
+    
+
+      </body>
+      </html>
